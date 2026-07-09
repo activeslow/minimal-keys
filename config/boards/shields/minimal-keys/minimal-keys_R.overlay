@@ -41,13 +41,13 @@
 };
 
 / {
-    /* * zmk-rgbled-widget がコンパイルを通すために必須となるエイリアス定義
-     * アダプター側の標準的なLEDノード名をウィジェットの要求名にマッピングしています
+    /* rgbled_adapter が定義する標準的なLEDノード名（pwm_led_0~2）を
+     * zmk-rgbled-widget が要求するエイリアスにマッピング
      */
     aliases {
-        led-red   = &led_red;
-        led-green = &led_green;
-        led-blue  = &led_blue;
+        led-red   = &pwm_led_0;
+        led-green = &pwm_led_1;
+        led-blue  = &pwm_led_2;
     };
 
     trackball_listener {
