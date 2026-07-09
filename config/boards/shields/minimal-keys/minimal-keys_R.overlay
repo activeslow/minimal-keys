@@ -41,13 +41,13 @@
 };
 
 / {
-    /* rgbled_adapter が定義する標準的なLEDノード名（pwm_led_0~2）を
-     * zmk-rgbled-widget が要求するエイリアスにマッピング
+    /* xiao_ble ボード純正のLEDノード（led0=赤, led1=緑, led2=青）を
+     * zmk-rgbled-widget が要求するエイリアス名へ正しくマッピング
      */
     aliases {
-        led-red   = &pwm_led_0;
-        led-green = &pwm_led_1;
-        led-blue  = &pwm_led_2;
+        led-red   = &led0;
+        led-green = &led1;
+        led-blue  = &led2;
     };
 
     trackball_listener {
