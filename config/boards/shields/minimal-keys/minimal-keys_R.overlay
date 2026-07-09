@@ -1,5 +1,4 @@
 #include "minimal-keys.dtsi"
-#include <dt-bindings/input/input.h>
 
 &xiao_serial { status = "disabled"; };
 &default_transform {
@@ -65,8 +64,8 @@
         /* 本家ZMK必須プロパティ：割り込みピン設定 */
         motion-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /* 本家ZMK必須プロパティ：相対座標の軸マッピング */
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
+        /* 本家ZMK必須プロパティ：相対座標の軸マッピング（数値で直接指定） */
+        zephyr,axis-x = <0x00>; /* INPUT_REL_X */
+        zephyr,axis-y = <0x01>; /* INPUT_REL_Y */
     };
 };
