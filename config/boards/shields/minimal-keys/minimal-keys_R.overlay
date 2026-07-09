@@ -41,6 +41,15 @@
 };
 
 / {
+    /* * zmk-rgbled-widget がコンパイルを通すために必須となるエイリアス定義
+     * アダプター側の標準的なLEDノード名をウィジェットの要求名にマッピングしています
+     */
+    aliases {
+        led-red   = &led_red;
+        led-green = &led_green;
+        led-blue  = &led_blue;
+    };
+
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
@@ -64,7 +73,7 @@
         /* 本家ZMK必須プロパティ：割り込みピン設定 */
         motion-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /* 本家ZMK必須プロパティ：相対座標の軸マッピング（数値で直接指定） */
+        /* 本家ZMK必須プロパティ：相対座標の軸マッピング（数値直接指定） */
         zephyr,axis-x = <0x00>; /* INPUT_REL_X */
         zephyr,axis-y = <0x01>; /* INPUT_REL_Y */
     };
