@@ -70,7 +70,8 @@
         
         /* 本家ZMK必須プロパティ */
         motion-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        zephyr,axis-x = <0x00>; 
-        zephyr,axis-y = <0x01>; 
+        /* 0x00と0x01を入れ替えて、X軸とY軸を逆転させる */
+        zephyr,axis-x = <0x01>; 
+        zephyr,axis-y = <0x00>;
     };
 };
