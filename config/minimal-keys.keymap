@@ -53,6 +53,7 @@
 // 2. システム・トラックボールへの割り当て
 // ==========================================
 // ▼ 自動マウスモード切り替えを復活！
+
 &mkp_input_listener { input-processors = <&zip_temp_layer_threshold 4 1500>; };
 
 &trackball_listener {
@@ -65,6 +66,7 @@
     >;
 
     // レイヤー3（Aボタン長押し）のみ縦スクロール
+
     tatescroller {
         layers = <3>;
         input-processors = <
@@ -76,6 +78,7 @@
     };
 
     // レイヤー5（Iボタン長押し）のみ横スクロール
+
     yokoscroller {
         layers = <5>;
         input-processors = <
@@ -151,70 +154,68 @@
 
         default_layer {
             bindings = <
-&kp ESCAPE          &kp W   &kp E         &kp R       &kp T                                                            &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&lt 3 A             &kp S   &kp D         &kp F       &kp G        &kp ESCAPE         &kp SEMICOLON    &kp H         &kp J        &kp K      &kp L    &lt 4 MINUS
-&mt LEFT_CONTROL Z  &kp X   &kp C         &kp V       &kp B        &trans             &kp SLASH        &kp N         &kp M        &kp COMMA  &kp DOT  &mt LEFT_SHIFT EQUAL
-&mt LEFT_SHIFT Q    &trans  &kp LEFT_GUI  &kp LSHIFT  &lt 1 SPACE  &lt 5 LG(SPACE)    &lt 6 BACKSPACE  &lt 2 ENTER                                    &mt RIGHT_ALT BACKSLASH
+&kp ESCAPE          &kp W   &kp E         &kp R       &kp T                                            &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&lt 3 A             &kp S   &kp D         &kp F       &kp G        &kp ESCAPE         &kp SEMICOLON    &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
+&mt LEFT_CONTROL Z  &kp X   &kp C         &kp V       &kp B        &trans             &kp SLASH        &kp N        &kp M  &kp COMMA  &kp DOT  &mt LEFT_SHIFT EQUAL
+&mt LEFT_SHIFT Q    &trans  &kp LEFT_GUI  &kp LSHIFT  &lt 1 SPACE  &lt 5 LG(SPACE)    &lt 6 BACKSPACE  &lt 2 ENTER                             &mt RIGHT_ALT BACKSLASH
             >;
+
             sensor-bindings = <&inc_dec_kp F19 F18>;
         };
 
         FUNCTION {
             bindings = <
-&kp F1     &kp F2  &kp F3  &kp F4  &kp F5                        &trans      &kp N7        &kp N8        &kp N9        &trans
-// ▼ NUMBER_4, NUMBER_6 を N4, N6 に修正
-&kp F6     &kp F7  &kp F8  &kp F9  &kp F10  &trans    &trans  &trans      &kp N4        &kp N5        &kp N6        &kp MINUS
-// ▼ NUMBER_1, NUMBER_2, NUMBER_3 を N1, N2, N3 に修正
-&kp LG(Z)  &trans  &trans  &trans  &trans   &trans    &trans  &trans      &kp N1        &kp N2        &kp N3        &kp EQUAL
-&trans     &trans  &trans  &trans  &trans   &trans    &kp N0  &kp PERIOD                                            &trans
+&kp F1     &kp F2  &kp F3  &kp F4  &kp F5                     &trans      &kp N7  &kp N8  &kp N9  &trans
+&kp F6     &kp F7  &kp F8  &kp F9  &kp F10  &trans    &trans  &trans      &kp N4  &kp N5  &kp N6  &kp MINUS
+&kp LG(Z)  &trans  &trans  &trans  &trans   &trans    &trans  &trans      &kp N1  &kp N2  &kp N3  &kp EQUAL
+&trans     &trans  &trans  &trans  &trans   &trans    &kp N0  &kp PERIOD                          &trans
             >;
         };
 
         NUM {
             bindings = <
-&trans                &kp C_BRI_DN          &kp LG(E)        &kp C_BRI_UP  &kp LC(T)                                  &trans              &trans              &kp LS(UP_ARROW)    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp LC(A)             &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp C_PREV    &kp C_NEXT        &trans    &trans  &trans              &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)   &kp AT
-&kp LC(Z)             &kp LC(X)             &kp RC(C)        &kp LC(V)     &trans            &trans    &trans  &trans              &kp LG(O)           &kp COMMA           &trans                &trans
-// ▼ NUMBER_3, NUMBER_4, NUMBER_1 を正しい N3, N4, N1 に修正
-&kp LS(LG(N3))        &kp LS(LG(N4))        &trans           &trans        &kp C_PLAY_PAUSE  &trans    &trans  &kp LC(N1)                                                                      &trans
+&trans          &kp C_BRI_DN       &kp LG(E)        &kp C_BRI_UP  &kp LC(T)                           &trans      &trans              &kp LS(UP_ARROW)    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp LC(A)       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_PREV    &kp C_NEXT        &trans    &trans  &trans      &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)   &kp AT
+&kp LC(Z)       &kp LC(X)          &kp RC(C)        &kp LC(V)     &trans            &trans    &trans  &trans      &kp LG(O)           &kp COMMA           &trans                &trans
+&kp LS(LG(N3))  &kp LS(LG(N4))     &trans           &trans        &kp C_PLAY_PAUSE  &trans    &trans  &kp LC(N1)                                                                &trans
             >;
         };
 
         ARROW {
             bindings = <
-&trans  &kp F2            &kp F4        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                              &trans             &kp HOME        &kp UP_ARROW    &kp END          &kp SINGLE_QUOTE
-&trans  &kp LEFT_CONTROL  &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp LA(F8)     &kp DOUBLE_QUOTES  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PLUS
-&trans  &trans            &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp LA(F11)    &kp COMMA          &kp BACKSPACE   &trans          &kp DELETE       &kp ASTERISK
-&trans  &trans            &trans        &trans                &trans                 &trans    &kp BACKSPACE  &trans                                                              &trans
+&trans  &kp F2            &kp F4  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                         &trans             &kp HOME        &kp UP_ARROW    &kp END          &kp SINGLE_QUOTE
+&trans  &kp LEFT_CONTROL  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp LA(F8)   &kp DOUBLE_QUOTES  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PLUS
+&trans  &trans            &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp LA(F11)  &kp COMMA          &kp BACKSPACE   &trans          &kp DELETE       &kp ASTERISK
+&trans  &trans            &trans  &trans                &trans                 &trans    &kp DELETE   &kp LC(N1)                                                          &trans
             >;
+
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {
             bindings = <
-&trans  &trans    &trans    &trans    &trans                                &trans    &trans    &trans    &trans    &trans
-&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans    &trans    &trans    &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans  &trans    &trans    &trans    &trans
-&trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans                                &trans
+&trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans
+&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans    &trans    &trans    &trans  &trans    &trans  &trans                                &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans   &trans   &trans   &trans               &kp LS(LG(UP_ARROW))                              &kp LS(LC(Y))          &kp LS(LC(U))      &kp LS(LC(I))      &kp LC(LS(O))       &trans
-&trans   &trans   &trans   &kp LG(LEFT_ARROW)   &kp LG(RIGHT_ARROW)   &trans    &trans          &kp LS(LC(H))          &kp LS(LC(J))      &kp LS(LC(K))      &kp LS(LC(L))       &kp LS(LC(MINUS))
-&kp F13  &kp F14  &kp F15  &kp LC(LEFT_ARROW)   &kp LC(RIGHT_ARROW)   &trans    &trans          &kp LS(LC(N))          &kp LC(LS(M))      &kp LS(LC(COMMA))  &kp LS(LC(PERIOD))  &trans
-&trans   &trans   &trans   &trans               &trans                &trans    &kp LS(LC(BACKSPACE))  &kp LS(LC(ENTER))                                                         &trans
+&trans   &trans   &trans   &trans              &kp LS(LG(UP_ARROW))                                   &kp LS(LC(Y))      &kp LS(LC(U))  &kp LS(LC(I))      &kp LC(LS(O))       &trans
+&trans   &trans   &trans   &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)   &trans    &trans                 &kp LS(LC(H))      &kp LS(LC(J))  &kp LS(LC(K))      &kp LS(LC(L))       &kp LS(LC(MINUS))
+&kp F13  &kp F14  &kp F15  &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)   &trans    &trans                 &kp LS(LC(N))      &kp LC(LS(M))  &kp LS(LC(COMMA))  &kp LS(LC(PERIOD))  &trans
+&trans   &trans   &trans   &trans              &trans                &trans    &kp LS(LC(BACKSPACE))  &kp LS(LC(ENTER))                                                        &trans
             >;
         };
 
         layer_6 {
             bindings = <
-&trans      &trans  &trans  &trans   &trans                                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans      &trans  &trans  &trans   &trans   &trans      &trans          &trans        &trans        &trans        &trans        &trans
-// ▼ NUMBER_1, NUMBER_2, NUMBER_3 を N1, N2, N3 に修正
-&trans      &trans  &trans  &kp N1   &kp N2   &kp N3      &trans  &trans  &bootloader   &trans        &trans        &trans
-&bt BT_CLR  &trans  &trans  &trans   &trans   &trans      &trans  &trans                                              &trans
+&trans      &trans  &trans  &trans  &trans                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans      &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans        &trans        &trans
+&trans      &trans  &trans  &kp N1  &kp N2  &kp N3    &trans  &trans        &bootloader   &trans        &trans        &trans
+&bt BT_CLR  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                  &trans
             >;
         };
     };
