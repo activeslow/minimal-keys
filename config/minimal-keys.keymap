@@ -57,7 +57,52 @@
 
 &trackball_listener {
     input-processors = <
-        &zip_xy_scaler 4 2
+        &zip_xy_scaler 3ｒ   compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+    };
+
+    zip_xy_transform: zip_xy_transform {
+        compatible = "zmk,input-processor-transform";
+        #input-processor-cells = <1>;
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+    };
+
+    zip_scroll_transform: zip_scroll_transform {
+        compatible = "zmk,input-processor-transform";
+        #input-processor-cells = <1>;
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_HWHEEL>;
+        y-codes = <INPUT_REL_WHEEL>;
+    };
+
+    zip_scroll_x_scaler: zip_scroll_x_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_HWHEEL>;
+        track-remainders;
+    };
+
+    zip_scroll_y_scaler: zip_scroll_y_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL>;
+        track-remainders;
+    };
+};
+
+// ==========================================
+// 2. システム・トラックボールへの割り当て
+// ==========================================
+
+&mkp_input_listener { input-processors = <&zip_temp_layer_threshold 4 1500>; };
+
+&trackball_listener {
+    input-processors = <
+        &zip_xy_scaler 3 2
         &zip_temp_layer_threshold 4 1000
         &zip_xy_transform INPUT_TRANSFORM_X_INVERT // 左右反転
         //&zip_xy_transform INPUT_TRANSFORM_Y_INVERT // 上下反転
@@ -70,6 +115,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 1 40 // スクロール速度調整
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // ★この1行を追加して上下反転！
             &zip_scroll_x_scaler 0 1 // スクロールを縦方向に限定する
         >;
     };
