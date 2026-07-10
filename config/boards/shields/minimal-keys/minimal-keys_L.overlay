@@ -3,13 +3,16 @@
 &xiao_serial { status = "disabled"; };
 
 / {
-    /* xiao_ble ボード純正のLEDノード（led0=赤, led1=緑, led2=青）を
-     * zmk-rgbled-widget が要求するエイリアス名へ正しくマッピング
-     */
     aliases {
         led-red   = &led0;
         led-green = &led1;
         led-blue  = &led2;
+    };
+
+    /* 左手用のダミーリスナー（キーマップの読み込みエラーを回避するため） */
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
     };
 };
 
