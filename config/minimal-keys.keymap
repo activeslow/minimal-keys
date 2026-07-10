@@ -172,10 +172,10 @@
 
         NUM {
             bindings = <
-&trans                &kp F14               &kp LG(E)        &trans      &kp LC(T)                           &trans            &trans              &kp LS(UP_ARROW)    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp LC(A)             &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp C_PREV  &kp C_NEXT        &trans    &trans  &trans            &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)   &kp AT
-&kp LC(Z)             &kp LC(X)             &kp RC(C)        &kp LC(V)   &trans            &trans    &trans  &kp LC(NUMBER_1)  &kp LG(O)           &kp COMMA           &trans                &trans
-&kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &trans           &trans      &kp C_PLAY_PAUSE  &trans    &trans  &trans                                                                          &trans
+&trans                &kp C_BRI_DN          &kp LG(E)        &kp C_BRI_UP  &kp LC(T)                           &trans  &trans              &kp LS(UP_ARROW)    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp LC(A)             &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp C_PREV    &kp C_NEXT        &trans    &trans  &trans  &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)   &kp AT
+&kp LC(Z)             &kp LC(X)             &kp RC(C)        &kp LC(V)     &trans            &trans    &trans  &trans  &kp LG(O)           &kp COMMA           &trans                &trans
+&kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &trans           &trans        &kp C_PLAY_PAUSE  &trans    &trans  &trans                                                                &trans
             >;
         };
 
