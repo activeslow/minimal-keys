@@ -155,9 +155,9 @@
         default_layer {
             bindings = <
 &kp ESCAPE          &kp W   &kp E         &kp R       &kp T                                            &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&lt 3 A             &kp S   &kp D         &kp F       &kp G        &kp ESCAPE         &kp SEMICOLON    &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
+&lt 3 A             &kp S   &kp D         &kp F       &kp G        &trans             &kp SEMICOLON    &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
 &mt LEFT_CONTROL Z  &kp X   &kp C         &kp V       &kp B        &trans             &kp SLASH        &kp N        &kp M  &kp COMMA  &kp DOT  &mt LEFT_SHIFT EQUAL
-&mt LEFT_SHIFT Q    &trans  &kp LEFT_GUI  &kp LSHIFT  &lt 1 SPACE  &lt 5 LG(SPACE)    &lt 6 BACKSPACE  &lt 2 ENTER                             &mt RIGHT_ALT BACKSLASH
+&mt LEFT_SHIFT Q    &trans  &kp LEFT_GUI  &kp ESCAPE  &lt 1 SPACE  &lt 5 LG(SPACE)    &lt 6 BACKSPACE  &lt 2 ENTER                             &mt RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp F19 F18>;
