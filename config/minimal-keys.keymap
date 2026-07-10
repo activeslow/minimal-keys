@@ -52,13 +52,12 @@
 // ==========================================
 // 2. システム・トラックボールへの割り当て
 // ==========================================
-// ▼ 自動マウスモード切り替えを復活！
+
 &mkp_input_listener { input-processors = <&zip_temp_layer_threshold 4 1500>; };
 
 &trackball_listener {
     input-processors = <
         &zip_xy_scaler 3 2
-        // ▼ 閾値による自動切り替えを復活！
         &zip_temp_layer_threshold 4 1000
         &zip_xy_transform INPUT_TRANSFORM_X_INVERT // 左右反転
         //&zip_xy_transform INPUT_TRANSFORM_Y_INVERT // 上下反転
@@ -69,7 +68,7 @@
         layers = <3>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 60 // スクロール速度調整
+            &zip_scroll_scaler 1 40 // スクロール速度調整
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // ★上下反転
             &zip_scroll_x_scaler 0 1 // スクロールを縦方向に限定する
         >;
@@ -152,7 +151,6 @@
         default_layer {
             bindings = <
 &kp ESCAPE          &kp W   &kp E         &kp R       &kp T                                                            &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-// ▼ 右端のキーを長押しでマウスレイヤー（lt 4 MINUS）に戻しました
 &lt 3 A             &kp S   &kp D         &kp F       &kp G        &kp ESCAPE         &kp SEMICOLON    &kp H         &kp J        &kp K      &kp L    &lt 4 MINUS
 &mt LEFT_CONTROL Z  &kp X   &kp C         &kp V       &kp B        &trans             &kp SLASH        &kp N         &kp M        &kp COMMA  &kp DOT  &mt LEFT_SHIFT EQUAL
 &mt LEFT_SHIFT Q    &trans  &kp LEFT_GUI  &kp LSHIFT  &lt 1 SPACE  &lt 5 LG(SPACE)    &lt 6 BACKSPACE  &lt 2 ENTER                                    &mt RIGHT_ALT BACKSLASH
@@ -171,10 +169,10 @@
 
         NUM {
             bindings = <
-&trans                &kp C_BRI_DN          &kp LG(E)        &kp C_BRI_UP  &kp LC(T)                                  &trans              &trans              &kp LS(UP_ARROW)    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp LC(A)             &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp C_PREV    &kp C_NEXT        &trans    &trans  &trans              &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)   &kp AT
-&kp LC(Z)             &kp LC(X)             &kp RC(C)        &kp LC(V)     &trans            &trans    &trans  &trans              &kp LG(O)           &kp COMMA           &trans                &trans
-&kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &trans           &trans        &kp C_PLAY_PAUSE  &trans    &trans  &kp LC(NUMBER_1)                                                                    &trans
+&trans                &kp F14               &kp LG(E)        &trans      &kp LC(T)                                  &trans              &trans              &kp LS(UP_ARROW)    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp LC(A)             &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp C_PREV  &kp C_NEXT        &trans    &trans  &trans              &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)   &kp AT
+&kp LC(Z)             &kp LC(X)             &kp RC(C)        &kp LC(V)   &trans            &trans    &trans  &kp LC(NUMBER_1)    &kp LG(O)           &kp COMMA           &trans                &trans
+&kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &trans           &trans      &kp C_PLAY_PAUSE  &trans    &trans  &trans                                                                            &trans
             >;
         };
 
@@ -190,11 +188,10 @@
 
         MOUSE {
             bindings = <
-// ▼ すべて `&trans` に戻して束縛を解除しました！（追加されていた右手のクリック設定はそのまま活かしています）
-&trans  &trans    &trans    &trans    &trans                                &trans    &trans    &trans    &trans    &trans
-&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans    &trans    &trans    &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans  &trans    &trans    &trans    &trans
-&trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans                                &trans
+&trans  &trans    &trans    &trans    &trans                              &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans  &trans    &trans  &trans                          &trans
             >;
         };
 
@@ -209,6 +206,11 @@
 
         layer_6 {
             bindings = <
-&trans      &trans  &trans  &trans        &trans                                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans      &trans  &trans  &trans        &trans        &trans      &trans          &trans        &trans        &trans        &trans        &trans
-&trans      &trans  &trans  &kp NUMBER_1  &kp NUMBER
+&trans  &trans  &trans        &trans        &trans                              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans        &trans        &trans  &trans    &trans  &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans    &trans  &bootloader   &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans        &trans        &trans  &trans    &trans  &trans                                                      &bt BT_CLR_ALL
+            >;
+        };
+    };
+};
