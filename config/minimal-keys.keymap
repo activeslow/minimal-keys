@@ -59,8 +59,8 @@
     input-processors = <
         &zip_xy_scaler 4 2
         &zip_temp_layer_threshold 4 1500
-        &zip_xy_transform INPUT_TRANSFORM_X_INVERT // 左右反転
-        &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // 上下反転
+        //&zip_xy_transform INPUT_TRANSFORM_X_INVERT // 左右反転
+        //&zip_xy_transform INPUT_TRANSFORM_Y_INVERT // 上下反転
     >;
 
     // レイヤー3（Aボタン長押し）のみ縦スクロール
