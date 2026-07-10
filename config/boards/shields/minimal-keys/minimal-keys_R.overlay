@@ -47,7 +47,8 @@
         led-blue  = &led2;
     };
 
-    trackball_listener {
+    /* ここを修正：trackball_listener: を前に追加してラベルを付けました */
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
